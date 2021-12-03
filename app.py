@@ -40,8 +40,10 @@ def telegram():  ### dentro da função serão processados os dados enviados pel
     token = os.environ["TELEGRAM_TOKEN"]  ### dentro da biblioteca OS tem um dicionário chamado ENVIRON, que possui todas as variáveis de ambiente, que, no caso, o heroku vai passar ro nosso programa (no heroku eu "escondi" o token) 
     message = {"chat_id": chat_id, "text": answer}  ### aqui constam os dados que serão enviados para o robô
     url = f"https://api.telegram.org/bot{token}/sendMessage"    
-    requests.post(url, data=message)   ### No código acima faço uma requisição para a API do telegram. 
-    
+    response = requests.post(url, data=message)   ### No código acima faço uma requisição para a API do telegram. 
+    if response.json()["ok"] == False:
+        raise RuntimeError("Erro ao responder API do Telegram")  ### essa etapa é para evitar aquele erro de quando muda o token, mas esquece de configurar ele no webhook (muda só no heroku). Se nao configurar no notebook tb, o robô nao vai mais responder, esse trecho faz aparecer uma mensagem de erro no heroku.  
+        
     ## FINALIZAÇÃO
     return "ok"  ### precisa ter o return pq precisamos devolver algo para o telegram. Ele fez um requisição e precisa ter uma devolutiva. 
 
