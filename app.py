@@ -1,4 +1,9 @@
 from flask import Flask
+from flask import request
+import requests
+import os
+
+### Página inicial. 
 
 app = Flask(__name__)
 
@@ -6,11 +11,11 @@ app = Flask(__name__)
 def hello_world():
     return "<p>Olá, <b>pessoal</b>!</p>"
 
+
+
+
 ### Site para o robô do telegram enviar dados das atualizações:
 
-
-from flask import request
-import requests
 
 
 @app.route("/telegram", methods = ["POST"])  ### crio uma nota página (/telegram) e informo que esse será um página para receber dados (post).
@@ -32,7 +37,7 @@ def telegram():  ### dentro da função serão processados os dados enviados pel
     
     
     ## RESPONDE
-    token = "2140351582:AAEMn6lRZTeV3ekUICnWV82MD85gW3bx7mg"
+    token = os.environ["TELEGRAM_TOKEN"]  ### dentro da biblioteca OS tem um dicionário chamado ENVIRON, que possui todas as variáveis de ambiente, que, no caso, o heroku vai passar ro nosso programa (no heroku eu "escondi" o token) 
     menssage = {"chat_id": chat_id, "text": answer}  ### aqui constam os dados que serão enviados para o robô
     url = f"https://api.telegram.org/bot{token}/sendMessage"    
     requests.post(url, data=menssage)   ### No código acima faço uma requisição para a API do telegram. 
