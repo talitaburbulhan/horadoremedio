@@ -38,9 +38,9 @@ def telegram():  ### dentro da função serão processados os dados enviados pel
     
     ## RESPONDE
     token = os.environ["TELEGRAM_TOKEN"]  ### dentro da biblioteca OS tem um dicionário chamado ENVIRON, que possui todas as variáveis de ambiente, que, no caso, o heroku vai passar ro nosso programa (no heroku eu "escondi" o token) 
-    menssage = {"chat_id": chat_id, "text": answer}  ### aqui constam os dados que serão enviados para o robô
+    message = {"chat_id": chat_id, "text": answer}  ### aqui constam os dados que serão enviados para o robô
     url = f"https://api.telegram.org/bot{token}/sendMessage"    
-    requests.post(url, data=menssage)   ### No código acima faço uma requisição para a API do telegram. 
+    requests.post(url, data=message)   ### No código acima faço uma requisição para a API do telegram. 
     
     ## FINALIZAÇÃO
     return "ok"  ### precisa ter o return pq precisamos devolver algo para o telegram. Ele fez um requisição e precisa ter uma devolutiva. 
