@@ -25,6 +25,8 @@ def telegram():  ### dentro da função serão processados os dados enviados pel
         answer = "Oi! Como vai?"
     elif text in ["bom dia", "boa tarde", "boa noite"]:
         answer = text
+    elif "remedio" in text:
+        answer = f"Os remédios estão no buraco do armário da cozinha."
     else:
         answer = "Não entendi."
     
