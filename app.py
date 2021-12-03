@@ -9,7 +9,7 @@ def hello_world():
 
 ### Site para o robô do telegram enviar dados das atualizações:
 
-from flask import request
+
 import requests
 
 @app.route("/telegram", methods = ["POST"])  ### crio uma nota página (/telegram) e informo que esse será um página para receber dados (post).
