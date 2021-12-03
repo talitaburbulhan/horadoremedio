@@ -7,4 +7,4 @@ import os
  chat_id = 1007648629
  text = "Olá, hora de tomar o remédio!"
  mensagem = {"chat_id": chat_id, "text": text}
- requests.post(url, data = message)
+ requests.post(url, data = mensagem)
