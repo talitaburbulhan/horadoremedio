@@ -30,6 +30,7 @@ def telegram():  ### dentro da função serão processados os dados enviados pel
     
     
     ## RESPONDE
+    token = "2140351582:AAEMn6lRZTeV3ekUICnWV82MD85gW3bx7mg"
     menssage = {"chat_id": chat_id, "text": answer}  ### aqui constam os dados que serão enviados para o robô
     url = f"https://api.telegram.org/bot{token}/sendMessage"    
     requests.post(url, data=menssage)   ### No código acima faço uma requisição para a API do telegram. 
