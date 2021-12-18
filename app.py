@@ -3,6 +3,16 @@ from flask import request
 import requests
 import os
 
+
+
+### Página inicial. 
+
+app = Flask(__name__)
+
+@app.route("/")
+def hello_world():
+    return "<p>Olá, <b>pessoal</b>!</p>"
+
 @app.route("/test")
 def teste():
     token = os.environ["TELEGRAM_TOKEN"] 
@@ -13,16 +23,6 @@ def teste():
         mensagem = {"chat_id": chat_id, "text": text, "parse_mode": "HTML"}
         requests.post(url, data = mensagem)
     return "ok"
-
-### Página inicial. 
-
-app = Flask(__name__)
-
-@app.route("/")
-def hello_world():
-    return "<p>Olá, <b>pessoal</b>!</p>"
-
-
 
 
 ### Site para o robô do telegram enviar dados das atualizações:
