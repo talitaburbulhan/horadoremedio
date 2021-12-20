@@ -25,3 +25,9 @@ Este repositório é composto pelas seguintes pastas:
 - 📂 requirements.txt<br>Contém arquivo que informa quais são as bibliotecas necessárias para rodar o site. Bibliotecas que já vem com o Python **NÃO** podem ser colocadas. 
 
 ## Melhorias:
+
+O robô está operacional, no entanto ele pode ser aprimorado. Algumas das melhorias em vista são:
+
+- 💡 Criar um único arquivo com as três mensagens automática enviadas ao longo do dia. Para isso, deverá ser usada a **biblioteca datetime** que possibilitará gerar um código que informa o horário de cada string. 
+- 💡 Gerar um banco de dados no Google Sheets com as informações de todas as mensagens do robô.
+- 💡 Criar um botão no robô que ao ser selecionado devolve como resultado uma lista de todas as medicações em uso. 
