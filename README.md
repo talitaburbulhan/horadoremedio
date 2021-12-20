@@ -1,5 +1,7 @@
 # horadoremedio
 
+![CAPA-github-hora_do_remedio_bot_Prancheta 1_Prancheta 1](https://user-images.githubusercontent.com/89229665/146800221-e998739f-2107-4591-bd6d-240c6ed4bf30.png)
+
 ## Introdução:
 
 Este repositório contém o site do robô **"Hora do remédio"** 🤖, uma automação criada para rodar no Telegram, que três vezes ao dia envia mensagens para meu pai, informando as medicações que ele deve tomar. Ele foi criado como trabalho final da disciplina de Algoritmos de Automação, do Insper, conduzida por [Álvaro Justen](https://github.com/turicas). 
